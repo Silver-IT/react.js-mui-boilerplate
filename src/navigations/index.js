@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-function App() {
+function AppNavigation() {
   return (
     <Button variant="contained" color="primary">
       Hello World
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppNavigation;
