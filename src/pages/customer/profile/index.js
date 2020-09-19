@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-function App() {
+const CustomerProfilePage = () => {
   return (
     <Button variant="contained" color="primary">
-      Hello World
+      Customer Profile Page
     </Button>
   );
 }
 
-export default App;
+export default CustomerProfilePage;
