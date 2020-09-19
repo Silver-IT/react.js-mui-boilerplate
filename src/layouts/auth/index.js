@@ -8,8 +8,8 @@ const AuthLayout = ({ match }) =>
     <h2>Auth Layout Header</h2> 
     
     <Switch>
-        <Route exact path={`${match.path}/login`} component={LoginPage} />
-        <Route exact path={`${match.path}/register`} component={RegisterPage} />
+        <Route exact path={`${match.path}login`} component={LoginPage} />
+        <Route exact path={`${match.path}register`} component={RegisterPage} />
 
         <Route path=''>
             <Redirect to='/404' />
