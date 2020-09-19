@@ -1,6 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
+export { default as AdminLayout } from './admin';
+export { default as AnonymousLayout } from './anonymous';
+export { default as CustomerLayout } from './customer';
+
 const LayoutWrapper = ({
     component: Component,
     layout: Layout,
@@ -15,4 +19,4 @@ const LayoutWrapper = ({
     );
 };
 
-export default LayoutWrapper;
+export { LayoutWrapper };

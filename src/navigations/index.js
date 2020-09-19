@@ -2,30 +2,26 @@ import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 // Layouts
-import LayoutWrapper from '../layouts';
-import AnonymousLayout from '../layouts/anonymous';
-import AdminLayout from '../layouts/anonymous';
-import CustomerLayout from '../layouts/customer';
+import { LayoutWrapper, AnonymousLayout, AdminLayout, CustomerLayout } from '../layouts';
 
 // Admin Pages
-import AdminDashboardPage from '../pages/admin/dashboard';
+import { AdminDashboardPage } from '../pages/admin';
 
 // Customer Pages
-import CustomerHomePage  from '../pages/customer/home';
-import CustomerProfilePage from '../pages/customer/profile';
+import { CustomerHomePage, CustomerProfilePage }  from '../pages/customer';
 
 // Anonymous Pages
-import LandingPage from '../pages/anonymous/landing';
+import { LandingPage, AboutUsPage } from '../pages/anonymous';
 
 // Auth Pages
-import LoginPage from '../pages/auth/login';
-import RegisterPage from '../pages/auth/register';
+import { LoginPage, RegisterPage } from '../pages/auth';
 
 const AppNavigation = () => {
   return (
     <BrowserRouter>
       <Switch>
         <LayoutWrapper exact path='/' component={LandingPage} layout={AnonymousLayout}/>
+        <LayoutWrapper exact path='/about-us' component={AboutUsPage} layout={AnonymousLayout}/>
 
         <LayoutWrapper exact path='/auth/login' component={LoginPage} layout={AnonymousLayout}/>
         <LayoutWrapper exact path='/auth/register' component={RegisterPage} layout={AnonymousLayout}/>
