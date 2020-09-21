@@ -1,12 +1,9 @@
 import { createMuiTheme } from "@material-ui/core";
 
 export const defaultTheme = createMuiTheme({
-    palette: {
-        // primary: blue
-    },
     props: {
         MuiButtonBase: {
-            // disableRipple: true
+            disableRipple: true
         },
         MuiButton: {
             disableElevation: true
@@ -16,13 +13,24 @@ export const defaultTheme = createMuiTheme({
 
 defaultTheme.overrides = {
     MuiButton: {
+        root: {
+            textTransform: "capitalize",
+            transition: "background 0.3s, color 0.3s",
+        },
         containedPrimary: {
-            transition: 'background 0.3s, color 0.3s',
             border: `1px solid ${defaultTheme.palette.primary.main}`,
-            '&:hover': {
+            "&:hover": {
                 border: `1px solid ${defaultTheme.palette.primary.main}`,
-                backgroundColor: 'white',
+                backgroundColor: "white",
                 color: defaultTheme.palette.primary.main
+            }
+        },
+        containedSecondary: {
+            border: `1px solid ${defaultTheme.palette.secondary.main}`,
+            "&:hover": {
+                border: `1px solid ${defaultTheme.palette.secondary.main}`,
+                backgroundColor: "white",
+                color: defaultTheme.palette.secondary.main
             }
         }
     }

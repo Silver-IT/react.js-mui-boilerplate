@@ -1,7 +1,7 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-import { AdminDashboardPage } from '../../pages/admin';
+import { AdminDashboardPage } from "../../pages/admin";
 
 const AdminLayout = ({ match }) =>
 <div>
@@ -10,8 +10,8 @@ const AdminLayout = ({ match }) =>
     <Switch>
         <Route exact path={`${match.path}dashboard`} component={AdminDashboardPage} />
 
-        <Route path=''>
-            <Redirect to='/404' />
+        <Route path="">
+            <Redirect to="/404" />
         </Route>
     </Switch>
     

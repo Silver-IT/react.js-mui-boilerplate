@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ThemeProvider } from '@material-ui/core';
+import React from "react";
+import ReactDOM from "react-dom";
+import { ThemeProvider } from "@material-ui/core";
 
-import AppNavigation from './navigations';
-import { defaultTheme } from './common/themes';
-import * as serviceWorker from './serviceWorker';
+import AppNavigation from "./navigations";
+import { defaultTheme } from "./common/themes";
+import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,7 +12,7 @@ ReactDOM.render(
       <AppNavigation />
     </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 serviceWorker.unregister();

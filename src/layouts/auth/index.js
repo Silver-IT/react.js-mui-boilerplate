@@ -1,7 +1,7 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-import { LoginPage, RegisterPage } from '../../pages/auth';
+import { LoginPage, RegisterPage } from "../../pages/auth";
 
 const AuthLayout = ({ match }) =>
 <div>
@@ -11,8 +11,8 @@ const AuthLayout = ({ match }) =>
         <Route exact path={`${match.path}login`} component={LoginPage} />
         <Route exact path={`${match.path}register`} component={RegisterPage} />
 
-        <Route path=''>
-            <Redirect to='/404' />
+        <Route path="">
+            <Redirect to="/404" />
         </Route>
     </Switch>
 
