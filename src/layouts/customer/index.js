@@ -12,7 +12,7 @@ const CustomerLayout = ({ match }) => {
     }
     
     return <div>
-        <h2>Customer Layout Header</h2> 
+        <h2>Customer Layout Header</h2>
         
         <Switch>
             <Route exact path={`${match.path}home`} component={CustomerHomePage} />
