@@ -1,2 +1,5 @@
-export const LOG_IN = "LOG-IN";
-export const LOG_OUT = "LOG-OUT";
+export const LOGIN_REQUEST = "LOGIN-REQUEST";
+export const LOGIN_SUCCEEDED = "LOGIN-SUCCEEDED";
+export const LOGIN_FAILED = "LOGIN-FAILED";
+export const LOGOUT_REQUEST = "LOGOUT-REQUEST";
+export const LOGOUT_SUCCEEDED = "LOGOUT-SUCCEEDED";

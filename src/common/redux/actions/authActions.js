@@ -1,10 +1,10 @@
-import { LOG_IN, LOG_OUT } from './types';
+import { LOGIN_REQUEST, LOGOUT_REQUEST } from './types';
 
 export const login = (email, password) => ({
-    type: LOG_IN,
+    type: LOGIN_REQUEST,
     payload: { email, password }
 });
 
 export const logout = () => ({
-    type: LOG_OUT
+    type: LOGOUT_REQUEST
 });

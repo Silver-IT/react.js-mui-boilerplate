@@ -6,9 +6,14 @@ import { LoginPage, RegisterPage } from "../../pages/auth";
 
 const AuthLayout = ({ match }) => {
     const isAuthenticated = useSelector(state => !!state.auth.user);
+    const role = useSelector(state => state.auth.user ? state.auth.user.role : null);
 
     if (isAuthenticated) {
-        return <Redirect to="/customer/home" />
+        if (role === "ADMIN") {
+            return <Redirect to="/admin/dashboard" />
+        } else if (role === "CUSTOMER") {
+            return <Redirect to="/customer/home" />
+        }
     }
 
     return (

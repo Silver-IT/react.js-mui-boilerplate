@@ -1,11 +1,15 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
+import { Box, Button } from "@material-ui/core";
 
 const AdminDashboardPage = () => {
+
   return (
-    <Button variant="contained" color="primary">
-      Admin Dashboard Page
-    </Button>
+    <Box>
+      <Button variant="contained" color="primary">
+        Admin Dashboard Page
+      </Button>
+    </Box>
+    
   );
 }
 
