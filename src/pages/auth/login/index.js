@@ -8,7 +8,7 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const login = useCallback(() => 
       dispatch({ type: LOGIN_REQUEST, payload: {
-        email: "admin@admin.com", password: "password"
+        email: "test@test.com", password: "password"
       }}),
       [dispatch]
   );
