@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { withStyles } from "@material-ui/core";
 
 // Layouts
 import { AuthLayout, AnonymousLayout, AdminLayout, CustomerLayout } from "../layouts";
 
+// Global Classes
 const AppNavigation = () => {
   return (
     <Router>

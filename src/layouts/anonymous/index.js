@@ -1,27 +1,41 @@
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
-
+import { Box, Button } from "@material-ui/core";
 
 import { LandingPage, AboutUsPage } from "../../pages/anonymous";
 import { Error404Page, Error500Page } from "../../pages/errors";
 
-const AnonymousLayout = ({ match }) =>
-<div>
-    <h2>Anonymous Layout Header</h2> 
+import { useGlobalStyles } from "../../common/themes/styles";
+import useStyles from "./style";
 
-    <Switch>
-        <Route exact path={`${match.path}`} component={LandingPage} />
-        <Route exact path={`${match.path}about-us`} component={AboutUsPage} />
 
-        <Route exact path="/404" component={Error404Page} />
-        <Route exact path="/500" component={Error500Page} />
+const AnonymousLayout = ({ match, theme }) => {
 
-        <Route path="">
-            <Redirect to="/404" />
-        </Route>
-    </Switch>
+    const classes = useStyles(theme);
+    const globalClasses = useGlobalStyles(theme);
 
-    <h2>Anonymous Layout Footer</h2> 
-</div>;
+    return <Box>
+        <Box>
+            <h2>Anonymous Layout Header</h2>
+            <Button className={globalClasses.customized}>
+                Customized Button
+            </Button>
+        </Box>
+
+        <Switch>
+            <Route exact path={`${match.path}`} component={LandingPage} />
+            <Route exact path={`${match.path}about-us`} component={AboutUsPage} />
+
+            <Route exact path="/404" component={Error404Page} />
+            <Route exact path="/500" component={Error500Page} />
+
+            <Route path="">
+                <Redirect to="/404" />
+            </Route>
+        </Switch>
+
+        <h2>Anonymous Layout Footer</h2> 
+    </Box>;
+};
 
 export default AnonymousLayout;
