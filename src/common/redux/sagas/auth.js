@@ -22,19 +22,20 @@ function* login(action) {
     const { email, password } = action.payload;
     const token = yield call(authorize, email, password)
     yield call(StorageService.saveItem, ACCESS_TOKEN_KEY, token);
-    yield call(verifyJWT);
-    yield put({ type: LOGIN_SUCCEEDED });
+    yield put({ type: TOKEN_VERIFY_REQUEST, payload: { replyForLogin: true } });
 }
 
-function* verifyJWT() {
+function* verifyJWT(action) {
+    const { payload } = action;
     const token = StorageService.getItem(ACCESS_TOKEN_KEY);
     try {
         const user = yield call(AuthService.verifyJWT, token);
         yield put({ type: TOKEN_VERIFY_SUCCEDED, payload: { user } });
-        return true;
+        if (payload && payload.replyForLogin ) {
+            yield put({ type: LOGIN_SUCCEEDED });
+        }
     } catch (error) {
         yield put({ type: TOKEN_VERIFY_FAILED, payload: { error } })
-        return false;
     }    
 }
 
