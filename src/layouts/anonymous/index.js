@@ -1,25 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
-import { Box, Button } from "@material-ui/core";
+import { Box, Typography, NativeSelect } from "@material-ui/core";
 
 import { LandingPage, AboutUsPage } from "../../pages/anonymous";
 import { Error404Page, Error500Page } from "../../pages/errors";
-
-import { useGlobalStyles } from "../../common/themes/styles";
-import useStyles from "./style";
+// import useStyles from "./style";
 
 
 const AnonymousLayout = ({ match, theme }) => {
+    const [lang, setLang] = useState('en');
 
-    const classes = useStyles(theme);
-    const globalClasses = useGlobalStyles(theme);
+    // const classes = useStyles(theme);
 
-    return <Box>
-        <Box>
-            <h2>Anonymous Layout Header</h2>
-            <Button className={globalClasses.customized}>
-                Customized Button
-            </Button>
+    return <Box className="bg-default">
+        <Box display="flex" justifyContent="center" className="bg-header-default">
+            <Box display="flex" justifyContent="space-between" width={1} className="container">
+                <Typography variant="h3">Sportsbet Logo</Typography>
+                <NativeSelect classes={{ root: "dark" }} variant="standard" value={lang} onChange={event => setLang(event.target.value)}>
+                    <option value="en">English</option>
+                    <option value="zh">中文</option>
+                    <option value="es">Español</option>
+                    <option value="ja">日本語</option>
+                    <option value="pt">Português</option>
+                    <option value="tr">Türkçe</option>
+                    <option value="th">ภาษาไทย</option>
+                    <option value="de">Deutsch</option>
+                    <option value="vi">Tiếng Việt</option>
+                </NativeSelect>
+            </Box>
         </Box>
 
         <Switch>
