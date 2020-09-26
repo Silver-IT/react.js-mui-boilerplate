@@ -6,6 +6,8 @@ import { withStyles } from "@material-ui/core";
 import { AuthLayout, AnonymousLayout, AdminLayout, CustomerLayout } from "../layouts";
 
 // Global Classes
+import { useGlobalStyles } from "../common/themes/styles";
+
 const AppNavigation = () => {
   return (
     <Router>
@@ -19,4 +21,4 @@ const AppNavigation = () => {
   );
 }
 
-export default AppNavigation;
+export default withStyles(theme => useGlobalStyles(theme), { withTheme: true })(AppNavigation);
