@@ -2,8 +2,9 @@
 export const DarkTheme = {
     palette: {
         primary: {
-            100: "#50e190",
-            500: "#0cd664"
+            light: "#50e190",
+            main: "#0cd664",
+            dark: "#0cd664"
         }
     },
     typography: {
