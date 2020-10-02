@@ -13,6 +13,7 @@ const AnonymousLayout = ({ match, theme }) => {
     // const classes = useStyles(theme);
 
     return <Box className="bg-default">
+        {/* Place Header Component */}
         <Box display="flex" justifyContent="center" className="bg-header-default">
             <Box display="flex" justifyContent="space-between" width={1} className="container">
                 <Typography variant="h3">Sportsbet Logo</Typography>
@@ -43,6 +44,7 @@ const AnonymousLayout = ({ match, theme }) => {
         </Switch>
 
         <h2>Anonymous Layout Footer</h2> 
+        {/* Place Footer Component */}
     </Box>;
 };
 
