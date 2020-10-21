@@ -3,5 +3,5 @@ This project is the React.js boilerplate which made MaterialUI design and Redux,
 ## Roadmap
 
 <p align="center">
-  <img src="/github/roadmap.png" width="320" alt="Roadmap" />
+  <img src="/github/roadmap.png" alt="Roadmap" />
 </p>
